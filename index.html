@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--phaser framework-->
+    <script src="lib/phaser.min.js" type="application/javascript"></script>
+
+    <!--Game states-->
+    <script src="src/Boot.js" type="application/javascript"></script>
+    <script src="src/Preload.js" type="application/javascript"></script>
+    <script src="src/Menu.js" type="application/javascript"></script>
+    <script src="src/instructions.js" type="application/javascript"></script>
+    <script src="src/game.js" type="application/javascript"></script>
+   
+    <!--Game objects-->
+    <script src="src/objects/Enemy.js" type="application/javascript"></script>
+    <script src="src/objects/Player.js" type="application/javascript"></script>
+	<script src="src/objects/bullet.js" type="application/javascript"></script>
+	<script src="src/objects/gun.js" type="application/javascript"></script>
+	<script src="src/objects/item.js" type="application/javascript"></script>
+	<script src="src/objects/ladder.js" type="application/javascript"></script>
+</head>
+<body>
+
+    <div id="Game"></div>
+
+    <script>
+        var game = new Phaser.Game(800,600, Phaser.AUTO, 'Game');
+        game.state.add('Boot',Boot);
+        game.state.add('Preload',Preload);
+        game.state.add('Menu',Menu);
+		game.state.add('Game',Game);
+		game.state.add('Instructions',Instructions);
+        game.state.start('hBoot');
+    </script>
+
+</body>
+</html>
